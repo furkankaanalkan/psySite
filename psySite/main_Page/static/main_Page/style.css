@@ -1,0 +1,24 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+.hero-section {
+    background-color: #f4f7f6; /* Göz yormayan soft bir arka plan */
+    padding: 100px 0;
+}
+
+.hero-image {
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Üzerine gelince hafifçe yukarı kalkma efekti */
+}
