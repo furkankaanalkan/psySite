@@ -22,3 +22,44 @@ body {
 .card:hover {
     transform: translateY(-5px); /* Üzerine gelince hafifçe yukarı kalkma efekti */
 }
+
+/* Hakkımda Bölümü Özel Stilleri */
+
+.about-section {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.about-title {
+    color: #212529;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.about-text {
+    color: #4f5660;
+    font-size: 1.25rem; /* Bootstrap fs-5 boyutuna denk gelir */
+    line-height: 1.6;
+}
+
+/* Özel Tasarım Devamını Oku Butonu */
+.about-btn {
+    background-color: #64748b; /* Görseldeki soft slate gri tonu */
+    color: #ffffff !important;
+    border: none;
+    padding: 0.6rem 2.2rem;
+    border-radius: 50rem; /* Tam yuvarlatılmış kenarlar */
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+/* Butonun Üzerine Gelindiğinde (Hover) */
+.about-btn:hover {
+    background-color: #475569;
+}
+
+/* Butona Tıklandığı An (Active) */
+.about-btn:active {
+    transform: scale(0.98);
+}
