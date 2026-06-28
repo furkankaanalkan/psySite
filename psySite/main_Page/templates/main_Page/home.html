@@ -1,19 +1,17 @@
 {% extends 'main_Page/base.html' %}
 {% load static %}
 
-
 {% block content %}
     <section class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start">
+                <div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start" data-aos="fade-right">
                     <h1 class="display-4 fw-bold mb-4">Daha Dengeli Bir Yaşama Adım Atın</h1>
                     <p class="lead text-muted mb-4">Kendinizi keşfetme ve iyileşme yolculuğunuzda, bilimsel ve güncel terapi yaklaşımlarıyla yanınızdayım.</p>
-                    <!-- href="#contact" olarak düzeltildi -->
-                    <a href="#contact" class="btn btn-outline-primary btn-lg rounded-pill px-4">Hemen İletişime Geç</a>
+                    <a href="#contact" class="btn btn-outline-primary btn-lg rounded-pill px-4 hover-lift">Hemen İletişime Geç</a>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <img src="" alt="Psikolog Portre" class="img-fluid hero-image">
+                <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-delay="200">
+                    <img src="{% static 'images/profil.jpg' %}" alt="Psikolog Portre" class="img-fluid hero-image">
                 </div>
             </div>
         </div>
@@ -21,33 +19,43 @@
 
     <section id="services" class="py-5">
         <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Çalışma Alanları</h2>
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Çalışma Alanlarım</h2>
                 <p class="text-muted">Size özel terapi yaklaşımları</p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 p-3 text-center">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 p-4 text-center">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">Bireysel Terapi</h5>
+                            <h5 class="card-title fw-bold mb-3">Bireysel Terapi</h5>
                             <p class="card-text text-muted">Anksiyete, depresyon, stres yönetimi ve kişisel gelişim süreçlerinizde birebir destek.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card h-100 p-3 text-center">
+                <div class="col-md-5" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 p-4 text-center">
                         <div class="card-body">
-                            <h5 class="card-title fw-bold">Ergen Terapisi</h5>
+                            <h5 class="card-title fw-bold mb-3">Ergen Terapisi</h5>
                             <p class="card-text text-muted">Ergenlik dönemindeki kimlik karmaşası, sınav kaygısı ve aile içi iletişim sorunları.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card h-100 p-3 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Çift Terapisi</h5>
-                            <p class="card-text text-muted">İlişkideki iletişim kopuklukları, güven sorunları ve çatışma çözümü üzerine çalışmalar.</p>
-                        </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="approach" class="py-5" style="background-color: var(--bg-linen);">
+        <div class="container pb-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Terapi Yaklaşımım</h2>
+                <p class="text-muted">Güvenli, yargısız ve bilimsel temelli bir süreç</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card p-5 text-center shadow-sm" style="border-radius: 32px;">
+                        <p class="lead mb-0" style="color: var(--text-muted); line-height: 1.8;">
+                            Her bireyin hikayesi biriciktir. Bu nedenle terapi sürecini sizin hızınıza ve ihtiyaçlarınıza göre şekillendiriyorum. Temel olarak <strong>Bilişsel Davranışçı Terapi (BDT)</strong> yöntemlerini kullanmakla birlikte, güncel ve kanıta dayalı ekollerden yararlanarak bütüncül, şefkatli ve çözüm odaklı bir alan sunuyorum. Amacım, kendi içsel kaynaklarınızı keşfetmenizde size rehberlik etmektir.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -55,61 +63,52 @@
     </section>
 
     <section id="about" class="py-5 bg-light">
-        <div class="container">
+        <div class="container pb-5">
             <div class="row justify-content-center">
-                <div class="col-lg-10 col-md-12">
-                    
-                    <div class="about-section"> 
+                <div class="col-lg-10 col-md-12" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="about-section bg-white p-5 rounded-4 shadow-sm"> 
                         <h2 class="about-title">Ben Kimim?</h2>
                         
-                        <p class="about-text px-md-5">
-                            İstanbul Beykent Üniversitesi Psikoloji bölümünden mezun oldum. Bilişsel Davranışçı
-                            Terapi (BDT) ekolünü benimseyerek danışanlarıma kanıta dayalı ve çözüm odaklı bir
-                            terapi süreci sunuyorum. Amacım, güvenli bir alan yaratarak potansiyelinizi
-                            keşfetmenize yardımcı olmak.
+                        <p class="about-text px-md-4 mb-0">
+                            İstanbul Beykent Üniversitesi Psikoloji bölümünden mezun oldum. Bilişsel Davranışçı Terapi (BDT) ekolünü benimseyerek danışanlarıma kanıta dayalı ve çözüm odaklı bir terapi süreci sunuyorum. Amacım, güvenli bir alan yaratarak potansiyelinizi keşfetmenize yardımcı olmak.
                         </p>
-
+                        
                         <div class="collapse" id="hakkimdaDevami">
-                            <p class="about-text px-md-5 mt-3">
-                                Buraya danışanların görmesini istediğiniz diğer detayları, uyguladığınız ekollerin ayrıntılarını, çalışma alanlarınızı veya mesleki deneyimlerinizi ekleyebilirsiniz. Yapı aşağı doğru yumuşak bir şekilde genişleyecektir.
-                            </p>
+                            <div class="pt-4">
+                                <p class="about-text px-md-4 mb-0">
+                                    Burada danışanların görmesini istediğiniz diğer detayları, katıldığınız eğitimleri veya mesleki deneyimlerinizi ekleyebilirsiniz. Süreç boyunca empati ve gizlilik ilkelerine bağlı kalarak yanınızda olacağım.
+                                </p>
+                            </div>
                         </div>
-
-                        <button class="btn about-btn" 
-                                type="button" 
-                                data-bs-toggle="collapse" 
-                                data-bs-target="#hakkimdaDevami" 
-                                aria-expanded="false" 
-                                aria-controls="hakkimdaDevami" 
-                                id="devaminiOkuBtn">
+                        
+                        <button class="btn about-btn mt-4" type="button" data-bs-toggle="collapse" data-bs-target="#hakkimdaDevami" aria-expanded="false" aria-controls="hakkimdaDevami" id="devaminiOkuBtn">
                             Devamını Oku
                         </button>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
+    <footer id="contact" class="bg-dark text-white py-5">
+        <div class="container text-center" data-aos="fade-up">
             <div class="row">
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <h5>İletişim</h5>
-                    <p class="mb-1">Telefon: +90 555 123 45 67</p>
-                    <p class="mb-0">E-posta: info@domain.com</p>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-3 tracking-wider">İletişim</h5>
+                    <p class="mb-1 text-white-50">Telefon: +90 555 123 45 67</p>
+                    <p class="mb-0 text-white-50">E-posta: info@domain.com</p>
                 </div>
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <h5>Adres</h5>
-                    <p class="mb-0">Örnek Mahallesi, Klinik Sokak<br>No: 1, Daire: 2 İstanbul/Türkiye</p>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-3 tracking-wider">Lokasyon</h5>
+                    <p class="mb-0 text-white-50">Sadece Çevrimiçi (Online) Görüşme<br>Çanakkale/Türkiye</p>
                 </div>
                 <div class="col-md-4">
-                    <h5>Çalışma Saatleri</h5>
-                    <p class="mb-0">Pzt - Cuma: 09:00 - 18:00<br>Cumartesi: 10:00 - 15:00</p>
+                    <h5 class="text-uppercase mb-3 tracking-wider">Çalışma Saatleri</h5>
+                    <p class="mb-0 text-white-50">Pzt - Cuma: 09:00 - 18:00<br>Cumartesi: 10:00 - 15:00</p>
                 </div>
             </div>
-            <hr class="my-4 border-light">
-            <p class="mb-0 small">&copy; 2026 Psk. Elif Nihan Alkan. Tüm hakları saklıdır.</p>
+            <hr class="my-4 border-secondary">
+            <p class="mb-0 small text-white-50">&copy; 2026 Psk. Elif Nihan Alkan. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
@@ -117,16 +116,14 @@
         document.addEventListener("DOMContentLoaded", function() {
             const collapseElement = document.getElementById('hakkimdaDevami');
             const btnElement = document.getElementById('devaminiOkuBtn');
-
-            // Metin açıldığında butonu günceller
-            collapseElement.addEventListener('show.bs.collapse', () => {
-                btnElement.innerText = 'Daha Az Göster';
-            });
-
-            // Metin kapandığında butonu eski haline getirir
-            collapseElement.addEventListener('hide.bs.collapse', () => {
-                btnElement.innerText = 'Devamını Oku';
-            });
+            if(collapseElement && btnElement) {
+                collapseElement.addEventListener('show.bs.collapse', () => {
+                    btnElement.innerText = 'Daha Az Göster';
+                });
+                collapseElement.addEventListener('hide.bs.collapse', () => {
+                    btnElement.innerText = 'Devamını Oku';
+                });
+            }
         });
-        </script>
+    </script>
 {% endblock %}

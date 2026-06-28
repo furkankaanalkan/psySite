@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'payment.apps.PaymentConfig',
     'main_Page.apps.MainPageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
