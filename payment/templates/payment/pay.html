@@ -1,0 +1,66 @@
+{% extends 'main_Page/base.html' %}
+{% load static %}
+
+{% block navbar %}
+<a href="{% url 'main_Page:home' %}" class="btn-back-floating" data-aos="fade-down" data-aos-duration="800">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+        Ana Sayfa
+    </a>
+{% endblock %}
+
+{% block content %}
+    <section class="hero-section text-center" style="padding: 140px 0 60px 0;">
+        <div class="container" data-aos="fade-down">
+            <h1 class="display-5 fw-bold mb-3" style="color: var(--text-dark);">Randevu Oluşturun</h1>
+            <p class="lead" style="color: var(--text-muted);">Size en uygun zamanı belirlemek için lütfen aşağıdaki formu doldurun.</p>
+        </div>
+    </section>
+
+    <section class="py-5" style="background-color: var(--bg-linen);">
+        <div class="container pb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card p-4 p-md-5 form-card">
+                        <form action="#" method="POST">
+                            {% csrf_token %}
+                            
+                            <h5 class="form-section-title">Kişisel Bilgiler</h5>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label for="adSoyad" class="form-label">Adınız ve Soyadınız</label>
+                                    <input type="text" class="form-control custom-input" id="adSoyad" name="adSoyad" required placeholder="Örn: Ayşe Yılmaz">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="telefon" class="form-label">Telefon Numarası</label>
+                                    <input type="tel" class="form-control custom-input" id="telefon" name="telefon" required placeholder="05XX XXX XX XX">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="eposta" class="form-label">E-posta Adresi</label>
+                                    <input type="email" class="form-control custom-input" id="eposta" name="eposta" required placeholder="ornek@mail.com">
+                                </div>
+                            </div>
+                                <div class="col-md-12">
+                                    <label for="notlar" class="form-label">Eklemek İstedikleriniz (Opsiyonel)</label>
+                                    <textarea class="form-control custom-input" id="notlar" name="notlar" rows="4" placeholder="Kısaca bahsetmek istediğiniz bir konu varsa buraya yazabilirsiniz..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="mb-4 form-check custom-checkbox">
+                                <input type="checkbox" class="form-check-input" id="kvkkOnay" required>
+                                <label class="form-check-label text-muted small" for="kvkkOnay">
+                                    Kişisel verilerimin aydınlatma metni kapsamında işlenmesini kabul ediyorum.
+                                </label>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg rounded-pill py-3 hover-lift fw-bold">Randevu Talebi Gönder</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
