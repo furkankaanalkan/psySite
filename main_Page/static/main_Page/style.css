@@ -393,7 +393,7 @@ textarea.custom-input {
 }
 
 .therapy-list {
-  list-style-type: none; /* Varsayılan noktaları kaldırır */
+  list-style-type: none;
   padding-left: 0;
 }
 
@@ -404,8 +404,101 @@ textarea.custom-input {
 }
 
 .therapy-list li::before {
-  content: "•"; /* Buraya '✓' veya bir SVG ikon da koyabilirsin */
+  content: "•";
   position: absolute;
   left: 0;
-  color: #4A90E2; /* Tasarımına uygun bir renk kodu */
+  color: var(--primary-sage);
+}
+
+
+/* --- BÜYÜYEN KART TASARIMI (Progressive Disclosure) --- */
+
+.therapy-card-wrapper {
+    flex: 1 1 0%;
+    min-width: 0;
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, transform 0.4s ease;
+}
+
+.therapy-detail {
+    display: none;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    border-left: 1px solid rgba(95, 116, 100, 0.2);
+}
+
+@media (max-width: 991px) {
+    .therapy-detail {
+        border-left: none;
+        border-top: 1px solid rgba(95, 116, 100, 0.2);
+    }
+}
+
+.close-therapy-btn {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+#therapy-cards-container.has-expanded .therapy-card-wrapper:not(.is-expanded) {
+    flex: 0 0 0%;
+    opacity: 0;
+    margin: 0 !important; 
+    padding: 0 !important;
+    overflow: hidden;
+    pointer-events: none;
+    transform: scale(0.95);
+}
+
+.therapy-card-wrapper.is-expanded {
+    flex: 1 1 100%;
+}
+
+.therapy-card-wrapper.is-expanded .therapy-summary {
+    flex: 0 0 45%; 
+}
+
+.therapy-card-wrapper.is-expanded .therapy-detail {
+    display: block;
+    width: auto;
+    flex: 1; 
+    animation: slideFadeIn 0.5s forwards;
+    animation-delay: 0.2s;
+}
+
+.therapy-card-wrapper.is-expanded .expand-btn {
+    display: none;
+}
+
+.therapy-card-wrapper.is-expanded .close-therapy-btn {
+    display: block;
+    opacity: 1;
+}
+
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 991px) {
+    .therapy-card-wrapper.is-expanded .therapy-summary {
+        flex: auto;
+    }
+    @keyframes slideFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 }

@@ -44,11 +44,100 @@
     {% endblock %}
     
     {% block content %}
+    <!-- ÇALIŞMA ALANLARIM - Büyüyen Kart Tasarımı -->
+    <section id="services" class="py-5 pt-5 mt-5">
+        <div class="container overflow-hidden"> 
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Çalışma Alanlarım</h2>
+                <p class="text-muted">Size özel terapi yaklaşımları</p>
+            </div>
+
+            <div class="d-flex flex-column flex-lg-row gap-4" id="therapy-cards-container">
+                
+                <!-- 1. KART: BİREYSEL TERAPİ -->
+                <div class="therapy-card-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 p-4 p-lg-5 position-relative">
+                        <!-- Kapatma Butonu -->
+                        <button type="button" class="btn-close close-therapy-btn position-absolute top-0 end-0 m-4" aria-label="Kapat"></button>
+                        
+                        <div class="d-flex flex-column flex-lg-row h-100 w-100">
+                            <!-- Özet (Sol Taraf) -->
+                            <div class="therapy-summary d-flex flex-column h-100 pe-lg-3">
+                                <h4 class="card-title fw-bold mb-4">Bireysel Terapi</h4>
+                                <p class="card-text text-muted mb-4 flex-grow-1">
+                                    Her bireyin hikâyesi kendine özgüdür. Bu nedenle terapi süreci de tamamen kişiye özel olarak şekillendirilir. Yaşamın farklı dönemlerinde karşılaşılan zorluklar, duygusal yükler ve belirsizlikler zaman zaman tek başınıza baş etmekte zorlanmanıza neden olabilir.
+                                </p>
+                                <button class="about-btn mt-auto expand-btn text-decoration-none">Detaylı Bilgi</button>
+                            </div>
+
+                            <!-- Detay (Sağ Taraf - Tıklanınca Açılır) -->
+                            <div class="therapy-detail ps-lg-5 pt-4 pt-lg-0 mt-4 mt-lg-0">
+                                <h5 class="fw-bold mb-3" style="color: var(--primary-sage);">Bu Süreçte Neler Çalışıyoruz?</h5>
+                                <p class="text-muted mb-4">Bireysel terapi seanslarında, içsel dünyanızı keşfetmeniz ve daha sağlıklı baş etme mekanizmaları geliştirmeniz için güvenli bir alan sağlıyoruz.</p>
+                                
+                                <ul class="therapy-list text-muted mb-0">
+                                    <li>Kaygı (Anksiyete) ve Stres Yönetimi</li>
+                                    <li>Depresyon ve Mutsuzluk Hissi</li>
+                                    <li>İlişki ve İletişim Problemleri</li>
+                                    <li>Özgüven ve Değersizlik Hisleri</li>
+                                    <li>Travma ve Geçmiş Yaşantılar</li>
+                                </ul>
+                                
+                                <div class="mt-4 pt-3">
+                                    <a href="{% url 'payment:pay' %}" class="btn btn-primary rounded-pill px-4">Hemen Randevu Al</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. KART: ERGEN TERAPİSİ -->
+                <div class="therapy-card-wrapper" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 p-4 p-lg-5 position-relative">
+                        <!-- Kapatma Butonu -->
+                        <button type="button" class="btn-close close-therapy-btn position-absolute top-0 end-0 m-4" aria-label="Kapat"></button>
+                        
+                        <div class="d-flex flex-column flex-lg-row h-100 w-100">
+                            <!-- Özet (Sol Taraf) -->
+                            <div class="therapy-summary d-flex flex-column h-100 pe-lg-3">
+                                <h4 class="card-title fw-bold mb-4">Ergen Terapisi</h4>
+                                <p class="card-text text-muted mb-4 flex-grow-1">
+                                    Her gencin gelişim süreci kendine özgüdür. Terapi, bu sürece saygı duyan ve bireysel farklılıkları merkeze alan bir güven alanıdır. Kimlik karmaşası, akademik kaygılar veya akran ilişkilerinde yaşanan zorluklar güvenli bir ortamda ele alınır.
+                                </p>
+                                <button class="about-btn mt-auto expand-btn text-decoration-none">Detaylı Bilgi</button>
+                            </div>
+
+                            <!-- Detay (Sağ Taraf - Tıklanınca Açılır) -->
+                            <div class="therapy-detail ps-lg-5 pt-4 pt-lg-0 mt-4 mt-lg-0">
+                                <h5 class="fw-bold mb-3" style="color: var(--primary-sage);">Hangi Konularda Destek Sağlıyorum?</h5>
+                                <p class="text-muted mb-4">Ergenlik dönemindeki bireylerin kendilerini yargılanmadan ifade edebilecekleri, duyulduklarını hissedecekleri bir süreç yürütüyoruz.</p>
+
+                                <ul class="therapy-list text-muted mb-0">
+                                    <li>Sınav Kaygısı ve Akademik Baskı</li>
+                                    <li>Akran Zorbalığı ve Uyum Süreci</li>
+                                    <li>Aile İçi İletişim Çatışmaları</li>
+                                    <li>Duygu Durum Dalgalanmaları</li>
+                                    <li>Gelecek Kaygısı ve Meslek Seçimi</li>
+                                </ul>
+                                
+                                <div class="mt-4 pt-3">
+                                    <a href="{% url 'payment:pay' %}" class="btn btn-primary rounded-pill px-4">Hemen Randevu Al</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
     {% endblock %}
 
+    <!-- Script Yüklemeleri -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // AOS Animasyonları
         AOS.init({
             once: true,
             offset: 100,
@@ -56,6 +145,7 @@
             easing: 'ease-out-cubic'
         });
 
+        // Navbar Kaydırma Efekti
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.modern-navbar');
             if (navbar) {
@@ -64,6 +154,33 @@
                 } else {
                     navbar.classList.remove('scrolled');
                 }
+            }
+        });
+
+        // Büyüyen Kart (Progressive Disclosure) İşlemleri
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('therapy-cards-container');
+            const expandBtns = document.querySelectorAll('.expand-btn');
+            const closeBtns = document.querySelectorAll('.close-therapy-btn');
+
+            if (container && expandBtns.length > 0) {
+                expandBtns.forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault(); 
+                        const cardWrapper = this.closest('.therapy-card-wrapper');
+                        container.classList.add('has-expanded');
+                        cardWrapper.classList.add('is-expanded');
+                    });
+                });
+
+                closeBtns.forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const cardWrapper = this.closest('.therapy-card-wrapper');
+                        container.classList.remove('has-expanded');
+                        cardWrapper.classList.remove('is-expanded');
+                    });
+                });
             }
         });
     </script>
