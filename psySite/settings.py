@@ -118,3 +118,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+EMAIL_BACKEND = 'djngo.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TTLS = True
+
+EMAIL_HOST_USER = 'furkankaanforpo@gmail.com'
+EMAIL_HOST_PASSWORD = 'pmlz fido pcot ctdp'
+DEFOULT_FROM_EMAIL = EMAIL_HOST_USER
