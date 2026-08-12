@@ -1,6 +1,8 @@
 {% extends 'main_Page/base.html' %}
 {% load static %}
 
+{% block title %}Ana Sayfa | Psk. Elif Nihan Alkan{% endblock %}
+
 {% block content %}
     <section class="hero-section">
         <div class="container">
@@ -17,91 +19,87 @@
         </div>
     </section>
 
-   <section id="services" class="py-5">
-        <div class="container py-5">
-            <div class="text-center mb-5" data-aos="fade-up">
+         <!-- ÇALIŞMA ALANLARIM -->
+    <section id="services" class="py-5">
+        <div class="container overflow-hidden"> 
+            <div class="text-center mb-5">
                 <h2 class="fw-bold">Çalışma Alanlarım</h2>
                 <p class="text-muted">Size özel terapi yaklaşımları</p>
             </div>
-            
-            <!-- KESİN ÇÖZÜM: row ve col yapısı silindi, yerine arasına zorunlu 3rem boşluk (gap) koyan Flexbox eklendi -->
-            <div class="d-flex flex-column flex-md-row justify-content-center align-items-start" style="gap: 3rem;">
+
+            <div class="d-flex flex-column flex-lg-row gap-4" id="therapy-cards-container">
                 
-                <!-- Bireysel Terapi -->
-                <div class="w-100" style="max-width: 500px;" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 p-4 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold mb-3">Bireysel Terapi</h5>
-                            <p class="card-text text-muted">Her bireyin hikâyesi kendine özgüdür. Bu nedenle terapi süreci de tamamen kişiye özel olarak şekillendirilir.</p>
-                        </div>
+                <!-- 1. KART: BİREYSEL TERAPİ -->
+                <div class="therapy-card-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 p-4 p-lg-5 position-relative">
+                        <!-- Sola Doğru Ok Butonu -->
+                        <button type="button" class="close-therapy-btn position-absolute top-0 end-0 m-4 border-0 bg-transparent text-muted" aria-label="Geri Dön">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                            </svg>
+                        </button>
                         
-                        <div class="collapse text-start" id="DetayliBilgi">
-                            <div class="pt-4">
-                                <p>Yaşamın farklı dönemlerinde karşılaşılan zorluklar, duygusal yükler ve belirsizlikler zaman zaman tek başınıza baş etmekte zorlanmanıza neden olabilir. Bireysel terapi; düşüncelerinizi, duygularınızı ve davranışlarınızı daha iyi anlamanıza yardımcı olan, güvene dayalı ve gizlilik ilkesi çerçevesinde yürütülen profesyonel bir destek sürecidir.</p>
-
-                                <p>Terapi yalnızca sorunları çözmeye yönelik değildir; aynı zamanda kendinizi daha yakından tanımanıza, güçlü yönlerinizi keşfetmenize ve yaşam kalitenizi artırmanıza katkı sağlar.</p>
-
-                                <br>
-
-                                <strong>Destek Sunduğum Başlıca Konular:</strong>
-                                <ul class="therapy-list">
-                                    <li>Kaygı, yoğun stres ve depresif belirtiler</li>
-                                    <li>Özgüven ve benlik saygısı</li>
-                                    <li>Duygu düzenleme ve karar verme güçlükleri</li>
-                                    <li>İlişki ve iletişim problemleri</li>
-                                    <li>Yas, kayıp ve yaşam değişikliklerine uyum</li>
-                                    <li>Tükenmişlik hissi ve kişisel gelişim</li>
-                                </ul>
-
-                                <br>
-
-                                <strong>Süreç Nasıl İlerler?</strong>
-                                <p class="mb-0">İlk görüşmemizde ihtiyaçlarınızı, beklentilerinizi ve terapi hedeflerinizi birlikte değerlendiririz. Amaç; yaşadığınız güçlükleri anlamlandırmanıza, sağlıklı baş etme becerileri geliştirmenize ve psikolojik iyi oluşunuzu desteklemeye eşlik etmektir.</p>
+                        <div class="d-flex flex-column flex-lg-row h-100 w-100">
+                            <!-- Özet -->
+                            <div class="therapy-summary d-flex flex-column h-100 pe-lg-4">
+                                <h4 class="card-title fw-bold mb-4">Bireysel Terapi</h4>
+                                <p class="card-text text-muted mb-4 flex-grow-1">
+                                    Yaşam yolculuğumuzda zaman zaman kendi başımıza aşmakta zorlandığımız, üstesinden gelmekte yorulduğumuz dönemler olabilir. Bireysel terapi; duygusal zorluklarınızı anlamlandırmak, geçmişin yüklerinden arınmak ve kendinize daha şefkatli bir yerden bakabilmek için tasarlanmış bir keşif sürecidir. Tamamen size özel kurgulanan bu alanda, daha dengeli bir ruh haline ulaşmanıza eşlik ediyorum.
+                                </p>
+                                <button class="about-btn mt-auto expand-btn text-decoration-none">Detaylı Bilgi</button>
+                            </div>
+                            
+                            <!-- Detay -->
+                            <div class="therapy-detail pt-4 pt-lg-0 mt-4 mt-lg-0">
+                                <div class="therapy-detail-inner"> <!-- Animasyon için sarmalayıcı -->
+                                    <h5 class="fw-bold mb-3" style="color: var(--primary-sage);">Süreçte Neler Çalışıyoruz?</h5>
+                                    <p class="text-muted mb-4">İçsel dünyanızı keşfetmeniz için güvenli bir alan sağlıyoruz.</p>
+                                    <ul class="therapy-list text-muted mb-0">
+                                        <li>Kaygı ve Stres Yönetimi</li>
+                                        <li>Depresyon ve Mutsuzluk</li>
+                                        <li>İlişki Problemleri</li>
+                                        <li>Özgüven Problemleri</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-
-                        <button class="btn about-btn mt-4 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#DetayliBilgi" aria-expanded="false" aria-controls="DetayliBilgi" id="detayliBilgiBtn1">
-                            Detaylı Bilgi
-                        </button>
                     </div>
                 </div>
 
-                <!-- Ergen Terapisi -->
-                <div class="w-100" style="max-width: 500px;" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 p-4 text-center">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold mb-3">Ergen Terapisi</h5>
-                            <p class="card-text text-muted">Her gencin gelişim süreci kendine özgüdür. Terapi, bu sürece saygı duyan ve bireysel farklılıkları merkeze alan bir güven alanıdır.</p>
-                        </div>
-                        
-                        <div class="collapse text-start" id="DetayliBilgi2">
-                            <div class="pt-4">
-                               <strong>Ergenlik Döneminde Güvenli ve Destekleyici Bir Alan</strong>
-                                <p>Ergenlik; çocukluktan yetişkinliğe geçişin yaşandığı, fiziksel ve duygusal birçok değişimin bir arada deneyimlendiği önemli bir dönemdir. Bu süreçte gençler kendilerini anlaşılmamış hissedebilir, yoğun duygular yaşayabilir veya kimliklerini oluştururken zorluklarla karşılaşabilir.</p>
-
-                                <p>Ergen terapisi, gençlerin kendilerini güvenli bir ortamda ifade edebilmelerini ve yaşadıkları güçlükleri anlamlandırarak sağlıklı baş etme becerileri geliştirmelerini destekler.</p>
-
-                                <br>
-
-                                <strong>Destek Sunduğum Başlıca Konular:</strong>
-                                <ul class="therapy-list">
-                                    <li>Sınav kaygısı ve akademik stres</li>
-                                    <li>Kimlik gelişimi ve gelecek kaygısı</li>
-                                    <li>Özgüven ve akran ilişkileri sorunları</li>
-                                    <li>Öfke kontrolü ve duygu düzenleme</li>
-                                    <li>Aile içi iletişim ve okula uyum problemleri</li>
-                                </ul>
-
-                                <br>
-
-                                <strong>Süreç Nasıl İlerler?</strong>
-                                <p class="mb-0">Öncelikle gencin kendini rahat ve güvende hissedebileceği bir ortam oluşturulur. Görüşmeler, bireysel ihtiyaçlar doğrultusunda planlanır. Gerektiğinde aileyle iş birliği yapılırken, gencin mahremiyeti ve gizliliği etik ilkeler çerçevesinde titizlikle korunur.</p>
-                            </div>
-                        </div>  
-
-                        <button class="btn about-btn mt-4 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#DetayliBilgi2" aria-expanded="false" aria-controls="DetayliBilgi2" id="detayliBilgiBtn2">
-                            Detaylı Bilgi
+                <!-- 2. KART: ERGEN TERAPİSİ -->
+                <div class="therapy-card-wrapper" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 p-4 p-lg-5 position-relative">
+                        <!-- Sola Doğru Ok Butonu -->
+                        <button type="button" class="close-therapy-btn position-absolute top-0 end-0 m-4 border-0 bg-transparent text-muted" aria-label="Geri Dön">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                            </svg>
                         </button>
+                        
+                        <div class="d-flex flex-column flex-lg-row h-100 w-100">
+                            <!-- Özet -->
+                            <div class="therapy-summary d-flex flex-column h-100 pe-lg-4">
+                                <h4 class="card-title fw-bold mb-4">Ergen Terapisi</h4>
+                                <p class="card-text text-muted mb-4 flex-grow-1">
+                                    Ergenlik dönemi, çocukluktan yetişkinliğe geçişte büyük değişimlerin yaşandığı oldukça hassas bir evredir. Bu süreçte gençler; kimlik arayışı, akademik baskılar veya akran ilişkilerinde pek çok yeni zorlukla baş başa kalabilir. Ergen terapisi, gençlerin yargılanmadan dinlendikleri ve kendi benliklerini güvenle inşa edebilecekleri destekleyici bir köprü görevi görür.
+                                </p>
+                                <button class="about-btn mt-auto expand-btn text-decoration-none">Detaylı Bilgi</button>
+                            </div>
+                            
+                            <!-- Detay -->
+                            <div class="therapy-detail pt-4 pt-lg-0 mt-4 mt-lg-0">
+                                <div class="therapy-detail-inner"> <!-- Animasyon için sarmalayıcı -->
+                                    <h5 class="fw-bold mb-3" style="color: var(--primary-sage);">Hangi Konularda Destek Sağlıyorum?</h5>
+                                    <p class="text-muted mb-4">Gençlerin duyulduklarını hissedecekleri bir süreç yürütüyoruz.</p>
+                                    <ul class="therapy-list text-muted mb-0">
+                                        <li>Sınav Kaygısı</li>
+                                        <li>Akran Zorbalığı</li>
+                                        <li>Aile İçi İletişim</li>
+                                        <li>Meslek Seçimi</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -109,6 +107,9 @@
         </div>
     </section>
 
+
+    <!-- YAKLAŞIM VE HAKKIMDA BÖLÜMLERİ -->
+        <!-- YAKLAŞIM BÖLÜMÜ -->
     <section id="approach" class="py-5" style="background-color: var(--bg-linen);">
         <div class="container pb-5">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -118,27 +119,31 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-12" data-aos="zoom-in" data-aos-delay="100">
                     <div class="card p-5 text-center shadow-sm" style="border-radius: 32px;">
+                        
+                        <!-- Özet Metin -->
                         <p class="lead mb-0" style="color: var(--text-muted); line-height: 1.8;">
-                             İstanbul Beykent Üniversitesi Psikoloji bölümünden mezun oldum. Bilişsel Davranışçı Terapi (BDT) ekolünü benimseyerek danışanlarıma kanıta dayalı ve çözüm odaklı bir terapi süreci sunuyorum. Amacım, güvenli bir alan yaratarak potansiyelinizi keşfetmenize yardımcı olmak.
+                            İstanbul Beykent Üniversitesi Psikoloji bölümünden mezun oldum. Bilişsel Davranışçı Terapi (BDT) ekolüyle, kanıta dayalı ve çözüm odaklı bir süreç yürütüyorum. Amacım, yargılanma korkusu hissetmeyeceğiniz güvenli bir alan yaratarak kendi potansiyelinizi keşfetmenize eşlik etmektir.
                         </p>
+                        
+                        <!-- Genişleyen Metin -->
                         <div class="collapse" id="hakkimdaDevami">
                             <div class="pt-4">
                                 <p class="about-text px-md-4 mb-0">
-                                    Bazen yaşadığımız duyguları anlatmak, onları yaşamanın kendisinden bile daha zor gelebilir. Terapiye başlarken "Acaba yargılanır mıyım?" ya da "Gerçekten anlaşılır mıyım?" gibi kaygılar taşımanız çok doğaldır. Benim için terapi, her şeyden önce yargılanma korkusu olmadan kendiniz olabileceğiniz; saygı, güven ve gizliliğe dayalı güvenli bir alan oluşturmaktır.
-                                    Her bireyin yaşam öyküsü ve deneyimleri biriciktir. Bu nedenle sizi tek bir kalıba koymadan; bir tanı, etiket veya problem üzerinden değil, kendi koşullarınız içinde bir "insan" olarak anlamayı önemsiyorum. Amacım size ne yapmanız gerektiğini söylemek değil; yaşadığınız süreci birlikte anlamlandırmak, uzun zamandır fark etmediğiniz güçlü yönlerinizi açığa çıkarmak ve kendi çözüm yollarınızı keşfetmenize eşlik etmektir.
-                                    İyileşmenin ilk adımının, anlaşıldığını hissetmek olduğuna inanıyorum. Bu yolculukta atacağımız her adım, tamamen sizin hızınıza ve kendinizi hazır hissettiğiniz ölçüye göre şekillenecektir. Yargılayan değil dinleyen, yöneten değil eşlik eden, hazır cevaplar sunan değil birlikte keşfeden bir yaklaşımla yanınızdayım.
+                                    Terapiye başlarken kaygı duymanız ve anlaşılıp anlaşılmayacağınızı düşünmeniz çok doğaldır. Benim için terapi; saygı ve gizliliğe dayalı, kendiniz olabileceğiniz bir alandır.<br><br>
+                                    Sizi bir tanı, etiket veya problem üzerinden değil, biricik yaşam öykünüzle anlamayı önemsiyorum. Size ne yapacağınızı söylemek yerine; duygularınızı anlamlandırmak, güçlü yönlerinizi açığa çıkarmak ve kendi çözüm yollarınızı bulmanıza rehberlik etmek için buradayım. Yargılayan değil dinleyen, yöneten değil eşlik eden bir yaklaşımla yanınızdayım.
                                 </p>
                             </div>
                         </div>
-                        <button class="btn about-btn mt-4 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#hakkimdaDevami" aria-expanded="false" aria-controls="hakkimdaDevami" id="devaminiOkuBtn">
-                            Devamını Oku
-                        </button>
+                        
+                        <button class="btn about-btn mt-4 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#hakkimdaDevami" aria-expanded="false" aria-controls="hakkimdaDevami" id="devaminiOkuBtn">Devamını Oku</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+
+        <!-- BEN KİMİM BÖLÜMÜ -->
     <section id="about" class="py-5 bg-light">
         <div class="container pb-5">
             <div class="row justify-content-center">
@@ -146,59 +151,37 @@
                     <div class="about-section bg-white p-5 rounded-4 shadow-sm"> 
                         <h2 class="about-title">Ben Kimim?</h2>
                         
+                        <!-- Özet Metin -->
                         <p class="about-text px-md-4 mb-0">
-                           Merhaba, ben Elif Nihan Alkan. Psikolojiyi, insanı anlamaya duyduğum merak ve hayatlara dokunabilme isteğiyle seçtim. Özellikle ergenler ve yetişkinlerle yürüttüğüm bireysel terapilerde; kaygı, stres, özgüven, yaşam olaylarına uyum, sınav kaygısı ve duygu düzenleme gibi konularda psikolojik destek sunuyorum. Amacım, yargılanmadan dinleneceğiniz güvenli bir alan oluşturarak içsel gücünüzü keşfetmenize yardımcı olmaktır. 
+                            Merhaba, ben Psk. Elif Nihan Alkan. Ergenler ve yetişkinlerle yürüttüğüm bireysel terapilerde; kaygı, stres, özgüven, yaşam olaylarına uyum ve duygu düzenleme gibi konularda destek sunuyorum. İnsanı anlamaya duyduğum merakla, yargılanmadan dinleneceğiniz bir alan oluşturmayı hedefliyorum.
                         </p>
                         
+                        <!-- Genişleyen Metin -->
                         <div class="collapse" id="hakkimdaDevami2">
                             <div class="pt-4">
                                 <p class="about-text px-md-4 mb-0">
-                                    Lisans eğitimimi başarıyla tamamladıktan sonra, mesleki gelişimimi yalnızca teorik bilgilerle sınırlandırmayıp sahadaki uygulama deneyimleriyle desteklemeye özen gösterdim. Eğitim sürecim boyunca anaokulu, özel eğitim ve rehabilitasyon merkezleri ile eğitim atölyelerinde staj yapma fırsatı buldum. Bu süreçte çocukların dünyasına eşlik etmek, ergenlerin kendini ifade etme çabalarına tanıklık etmek ve ailelerle birlikte çözüm yolları aramak, mesleğime bakış açımı şekillendiren en değerli deneyimlerim oldu.
-                                    Benim için psikolog olmak; yalnızca dinlemek değil, gerçekten anlamaya çalışmaktır. Çünkü bazen insanlar, bir çözümden ziyade anlaşıldıklarını hissetmeye ihtiyaç duyarlar. Terapi odasında en çok önem verdiğim şey, kendinizi özgürce ifade edebileceğiniz, koşulsuz kabul gördüğünüz bir alan yaratabilmektir. Hayatın hepimiz için zorlayıcı olabildiği dönemlerde, birinin sizi gerçekten anladığını bilmek büyük bir fark yaratır.
-                                    Sizlere en iyi şekilde destek olabilmek adına güncel bilimsel çalışmaları yakından takip ediyor ve eğitimlerime ara vermeden devam ediyorum. Eğer yollarımız kesişirse amacım size hazır cevaplar sunmak değil; kendi çözüm yollarınızı bulacağınız bu yolculukta size güvenli bir yol arkadaşı olabilmektir.
-                                    Çünkü inanıyorum ki değişim, kişinin kendini anlaşıldığını hissettiği yerde başlar.
+                                    Eğitim sürecimi yalnızca teorik bilgilerle değil; anaokulu, özel eğitim ve rehabilitasyon merkezlerindeki stajlarımla sahada pekiştirdim. Benim için psikolog olmak, sadece dinlemek değil, gerçekten anlamaya çalışmaktır.<br><br>
+                                    Çünkü iyileşme, kişinin koşulsuz kabul gördüğünü ve anlaşıldığını hissettiği yerde başlar. Güncel bilimsel çalışmaları yakından takip ediyor, hazır cevaplar sunmak yerine, kendi çözüm yollarınızı bulacağınız bu yolculukta size güvenilir bir yol arkadaşı olmayı amaçlıyorum.
                                 </p>
                             </div>
                         </div>
                         
-                        <button class="btn about-btn mt-4 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#hakkimdaDevami2" aria-expanded="false" aria-controls="hakkimdaDevami2" id="devaminiOkuBtn2">
-                            Devamını Oku
-                        </button>
+                        <button class="btn about-btn mt-4 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#hakkimdaDevami2" aria-expanded="false" aria-controls="hakkimdaDevami2" id="devaminiOkuBtn2">Devamını Oku</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="bg-dark text-white py-5">
-        <div class="container text-center" data-aos="fade-up">
-            <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-3 tracking-wider">İletişim</h5>
-                    <p class="mb-1 text-white-50">Telefon: +90 555 123 45 67</p>
-                    <p class="mb-0 text-white-50">E-posta: info@domain.com</p>
-                </div>
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-3 tracking-wider">Lokasyon</h5>
-                    <p class="mb-0 text-white-50">Sadece Çevrimiçi (Online) Görüşme<br>Çanakkale/Türkiye</p>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="text-uppercase mb-3 tracking-wider">Çalışma Saatleri</h5>
-                    <p class="mb-0 text-white-50">Pzt - Cuma: 09:00 - 18:00<br>Cumartesi: 10:00 - 15:00</p>
-                </div>
-            </div>
-            <hr class="my-4 border-secondary">
-            <p class="mb-0 small text-white-50">&copy; 2026 Psk. Elif Nihan Alkan. Tüm hakları saklıdır.</p>
-        </div>
-    </footer>
+{% endblock %}
 
+{% block extra_scripts %}
     <script>
+        // DEVAMINI OKU BUTONLARI İÇİN SCRİPT
         document.addEventListener("DOMContentLoaded", function() {
             const toggles = [
                 { collapseId: 'hakkimdaDevami', btnId: 'devaminiOkuBtn', defaultText: 'Devamını Oku' },
-                { collapseId: 'hakkimdaDevami2', btnId: 'devaminiOkuBtn2', defaultText: 'Devamını Oku' },
-                { collapseId: 'DetayliBilgi', btnId: 'detayliBilgiBtn1', defaultText: 'Detaylı Bilgi' },
-                { collapseId: 'DetayliBilgi2', btnId: 'detayliBilgiBtn2', defaultText: 'Detaylı Bilgi' }
+                { collapseId: 'hakkimdaDevami2', btnId: 'devaminiOkuBtn2', defaultText: 'Devamını Oku' }
             ];
 
             toggles.forEach(item => {
@@ -206,14 +189,38 @@
                 const btnElement = document.getElementById(item.btnId);
                 
                 if(collapseElement && btnElement) {
-                    collapseElement.addEventListener('show.bs.collapse', () => {
-                        btnElement.innerText = 'Daha Az Göster';
-                    });
-                    collapseElement.addEventListener('hide.bs.collapse', () => {
-                        btnElement.innerText = item.defaultText;
-                    });
+                    collapseElement.addEventListener('show.bs.collapse', () => { btnElement.innerText = 'Daha Az Göster'; });
+                    collapseElement.addEventListener('hide.bs.collapse', () => { btnElement.innerText = item.defaultText; });
                 }
             });
         });
     </script>
+    <script>
+      // BÜYÜYEN KARTLAR (PROGRESSIVE DISCLOSURE) İÇİN YENİ SCRİPT
+      document.addEventListener('DOMContentLoaded', function() {
+          const container = document.getElementById('therapy-cards-container');
+          const expandBtns = document.querySelectorAll('.expand-btn');
+          const closeBtns = document.querySelectorAll('.close-therapy-btn');
+  
+          if (container && expandBtns.length > 0) {
+              expandBtns.forEach(btn => {
+                  btn.addEventListener('click', function(e) {
+                      e.preventDefault(); 
+                      const cardWrapper = this.closest('.therapy-card-wrapper');
+                      container.classList.add('has-expanded');
+                      cardWrapper.classList.add('is-expanded');
+                  });
+              });
+  
+              closeBtns.forEach(btn => {
+                  btn.addEventListener('click', function(e) {
+                      e.preventDefault();
+                      const cardWrapper = this.closest('.therapy-card-wrapper');
+                      container.classList.remove('has-expanded');
+                      cardWrapper.classList.remove('is-expanded');
+                  });
+              });
+          }
+      });
+  </script>
 {% endblock %}

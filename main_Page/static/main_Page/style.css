@@ -6,7 +6,6 @@
     --bg-linen: #faf9f6;
     --text-dark: #232b25;
     --text-muted: #5a665e;
-    
     --shadow-sm: 0 4px 20px rgba(95, 116, 100, 0.04);
     --shadow-md: 0 12px 35px rgba(95, 116, 100, 0.08);
     --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -23,6 +22,7 @@ body {
     overflow-x: hidden;
 }
 
+/* NAVBAR */
 .modern-navbar {
     top: 25px; 
     width: 92%;
@@ -37,468 +37,196 @@ body {
     padding: 0.6rem 1rem;
     transition: var(--transition-smooth);
 }
-
 .modern-navbar.scrolled {
     top: 10px;
     padding: 0.4rem 1rem;
     background-color: rgba(250, 249, 246, 0.90) !important;
     box-shadow: 0 5px 20px rgba(95, 116, 100, 0.12);
 }
+.navbar-brand { color: var(--text-dark) !important; letter-spacing: -0.02em; font-size: 1.3rem; }
+.nav-link { color: var(--text-muted) !important; font-weight: 500; font-size: 1rem; transition: var(--transition-smooth); position: relative; padding-bottom: 5px; }
+.nav-link:hover { color: var(--primary-sage) !important; }
+.nav-link::after { content: ''; position: absolute; width: 5px; height: 5px; border-radius: 50%; bottom: -2px; left: 50%; background-color: var(--accent-gold); transition: var(--transition-smooth); transform: translateX(-50%) scale(0); opacity: 0; }
+.nav-link:hover::after { transform: translateX(-50%) scale(1); opacity: 1; }
 
-.navbar-brand {
-    color: var(--text-dark) !important;
-    letter-spacing: -0.02em;
-    font-size: 1.3rem;
+@media (max-width: 991px) {
+    .modern-navbar { border-radius: 24px; top: 15px; width: 95%; padding: 1rem; }
+    .navbar-collapse { padding-top: 1rem; text-align: center; }
+    .nav-link::after { display: none; }
+    .modern-navbar .d-flex { justify-content: center; width: 100%; }
+    .modern-navbar .btn-primary { width: 100%; margin-top: 0.5rem; }
 }
 
-.nav-link {
-    color: var(--text-muted) !important;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: var(--transition-smooth);
-    position: relative;
-    padding-bottom: 5px;
+/* GENEL BÖLÜMLER VE KARTLAR */
+.hero-section { background: linear-gradient(180deg, var(--sage-light) 0%, var(--bg-linen) 100%); padding: 160px 0 100px 0; }
+.hero-section h1 { color: var(--text-dark); letter-spacing: -0.03em; line-height: 1.2; }
+.hero-image { border-radius: 32px; box-shadow: var(--shadow-md); border: 8px solid #ffffff; transition: var(--transition-smooth); }
+.hero-image:hover { transform: scale(1.02) rotate(1deg); }
+
+#services { background-color: var(--bg-linen); }
+#about { background-color: var(--sage-light) !important; }
+
+.card { border: none; border-radius: 24px; background: #ffffff; box-shadow: var(--shadow-sm); transition: var(--transition-smooth); border: 1px solid rgba(95, 116, 100, 0.03); }
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: rgba(95, 116, 100, 0.15); }
+.card-title { color: var(--text-dark); position: relative; display: inline-block; }
+
+.about-section { border: none; border-radius: 32px; background: #ffffff !important; box-shadow: var(--shadow-sm); text-align: center; }
+.about-title { color: var(--text-dark); position: relative; margin-bottom: 2rem; font-weight: 700; }
+.about-title::after { content: ''; display: block; width: 50px; height: 3px; background-color: var(--accent-gold); margin: 15px auto 0 auto; border-radius: 2px; }
+.about-text { color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; }
+
+/* BUTONLAR */
+.btn-primary { background-color: var(--primary-sage) !important; border: none !important; color: #ffffff !important; font-weight: 500; box-shadow: 0 4px 15px rgba(95, 116, 100, 0.2); transition: var(--transition-smooth); }
+.btn-primary:hover { background-color: var(--sage-dark) !important; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(95, 116, 100, 0.3); }
+.btn-outline-primary { color: var(--primary-sage) !important; border: 2px solid var(--primary-sage) !important; font-weight: 500; background-color: transparent; transition: var(--transition-smooth); }
+.btn-outline-primary:hover { background-color: var(--primary-sage) !important; color: #ffffff !important; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(95, 116, 100, 0.2); }
+.about-btn { background-color: var(--bg-linen) !important; color: var(--primary-sage) !important; border: 1px solid rgba(95, 116, 100, 0.2) !important; padding: 0.75rem 2.5rem; border-radius: 50rem; font-weight: 600; transition: var(--transition-smooth); display: inline-block; text-align: center; }
+.about-btn:hover { background-color: var(--primary-sage) !important; color: #ffffff !important; border-color: var(--primary-sage) !important; transform: translateY(-2px); }
+.hover-lift { transition: var(--transition-smooth); }
+.hover-lift:hover { transform: translateY(-3px); }
+
+/* FOOTER VE LİSTELER */
+footer { background-color: #1c231f !important; border-top: 1px solid rgba(250, 249, 246, 0.05); }
+footer h5 { color: var(--accent-gold); font-weight: 600; font-size: 1.1rem; }
+footer p { color: rgba(250, 249, 246, 0.6) !important; }
+footer hr { border-color: rgba(250, 249, 246, 0.1) !important; }
+.tracking-wider { letter-spacing: 0.05em; }
+
+.therapy-list { list-style-type: none; padding-left: 0; }
+.therapy-list li { position: relative; padding-left: 20px; margin-bottom: 8px; }
+.therapy-list li::before { content: "•"; position: absolute; left: 0; color: var(--primary-sage); }
+
+
+/* ========================================================= */
+/* --- BÜYÜYEN KART ANİMASYONLARI (PÜRÜZSÜZ GEÇİŞ VERSİYONU) --- */
+/* ========================================================= */
+
+.therapy-card-wrapper {
+    flex: 1 1 50%; 
+    max-width: 50%;
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: hidden;
 }
 
-.nav-link:hover {
-    color: var(--primary-sage) !important;
+.therapy-summary {
+    transition: all 0.5s ease;
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    bottom: -2px;
-    left: 50%;
-    background-color: var(--accent-gold);
-    transition: var(--transition-smooth);
-    transform: translateX(-50%) scale(0);
+/* Detay alanı başlangıçta 0 genişlikte ve gizlidir */
+.therapy-detail {
+    flex: 0 0 0%;
+    max-width: 0%;
     opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    border-left: 1px solid rgba(95, 116, 100, 0);
+    padding-left: 0;
 }
 
-.nav-link:hover::after {
-    transform: translateX(-50%) scale(1);
-    opacity: 1;
+/* İçerik metinlerinin sağdan kayarak gelmesi için başlangıç durumu */
+.therapy-detail-inner {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+    min-width: 250px; 
 }
 
-@media (max-width: 991px) {
-    .modern-navbar {
-        border-radius: 24px; 
-        top: 15px;
-        width: 95%;
-        padding: 1rem;
-    }
-    
-    .navbar-collapse {
-        padding-top: 1rem;
-        text-align: center;
-    }
-    
-    .nav-link::after {
-        display: none; 
-    }
-    
-    .modern-navbar .d-flex {
-        justify-content: center;
-        width: 100%;
-    }
-    
-    .modern-navbar .btn-primary {
-        width: 100%;
-        margin-top: 0.5rem;
-    }
-}
-
-.hero-section {
-    background: linear-gradient(180deg, var(--sage-light) 0%, var(--bg-linen) 100%);
-    padding: 160px 0 100px 0;
-}
-
-.hero-section h1 {
-    color: var(--text-dark);
-    letter-spacing: -0.03em;
-    line-height: 1.2;
-}
-
-.hero-image {
-    border-radius: 32px; 
-    box-shadow: var(--shadow-md);
-    border: 8px solid #ffffff; 
-    transition: var(--transition-smooth);
-}
-
-.hero-image:hover {
-    transform: scale(1.02) rotate(1deg);
-}
-
-#services {
-    background-color: var(--bg-linen);
-}
-
-.card {
-    border: none;
-    border-radius: 24px;
-    background: #ffffff;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition-smooth);
-    border: 1px solid rgba(95, 116, 100, 0.03);
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-md);
-    border-color: rgba(95, 116, 100, 0.15);
-}
-
-.card-title {
-    color: var(--text-dark);
-    position: relative;
-    display: inline-block;
-}
-
-#about {
-    background-color: var(--sage-light) !important;
-}
-
-.about-section {
-    border: none;
-    border-radius: 32px;
-    background: #ffffff !important;
-    box-shadow: var(--shadow-sm);
-    text-align: center;
-}
-
-.about-title {
-    color: var(--text-dark);
-    position: relative;
-    margin-bottom: 2rem;
-    font-weight: 700;
-}
-
-.about-title::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: var(--accent-gold);
-    margin: 15px auto 0 auto;
-    border-radius: 2px;
-}
-
-.about-text {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.btn-primary {
-    background-color: var(--primary-sage) !important;
-    border: none !important;
-    color: #ffffff !important;
-    font-weight: 500;
-    box-shadow: 0 4px 15px rgba(95, 116, 100, 0.2);
-    transition: var(--transition-smooth);
-}
-
-.btn-primary:hover {
-    background-color: var(--sage-dark) !important;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(95, 116, 100, 0.3);
-}
-
-.btn-outline-primary {
-    color: var(--primary-sage) !important;
-    border: 2px solid var(--primary-sage) !important;
-    font-weight: 500;
-    background-color: transparent;
-    transition: var(--transition-smooth);
-}
-
-.btn-outline-primary:hover {
-    background-color: var(--primary-sage) !important;
-    color: #ffffff !important;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(95, 116, 100, 0.2);
-}
-
-.about-btn {
-    background-color: var(--bg-linen) !important;
-    color: var(--primary-sage) !important;
-    border: 1px solid rgba(95, 116, 100, 0.2) !important;
-    padding: 0.75rem 2.5rem;
-    border-radius: 50rem;
-    font-weight: 600;
-    transition: var(--transition-smooth);
-}
-
-.about-btn:hover {
-    background-color: var(--primary-sage) !important;
-    color: #ffffff !important;
-    border-color: var(--primary-sage) !important;
-    transform: translateY(-2px);
-}
-
-.hover-lift {
-    transition: var(--transition-smooth);
-}
-
-.hover-lift:hover {
-    transform: translateY(-3px);
-}
-
-footer {
-    background-color: #1c231f !important;
-    border-top: 1px solid rgba(250, 249, 246, 0.05);
-}
-
-footer h5 {
-    color: var(--accent-gold); 
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-footer p {
-    color: rgba(250, 249, 246, 0.6) !important;
-}
-
-footer hr {
-    border-color: rgba(250, 249, 246, 0.1) !important;
-}
-
-.tracking-wider {
-    letter-spacing: 0.05em;
-}
-
-.btn-back-floating {
-    position: fixed;
-    top: 25px;
-    right: 4%;
-    z-index: 1050;
-    background-color: rgba(250, 249, 246, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    color: var(--primary-sage);
-    border: 1px solid rgba(95, 116, 100, 0.2);
-    padding: 0.6rem 1.5rem;
-    border-radius: 50rem;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 10px 40px rgba(95, 116, 100, 0.08);
-    transition: var(--transition-smooth);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.btn-back-floating:hover {
-    background-color: var(--primary-sage);
-    color: #ffffff;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(95, 116, 100, 0.15);
-    border-color: var(--primary-sage);
-}
-
-.btn-back-floating svg {
-    transition: transform 0.3s ease;
-}
-
-.btn-back-floating:hover svg {
-    transform: translateX(-4px);
-}
-
-@media (max-width: 991px) {
-    .btn-back-floating {
-        right: 15px;
-        top: 15px;
-        padding: 0.5rem 1.2rem;
-        font-size: 0.95rem;
-    }
-}
-
-.form-card {
-    border: none;
-    border-radius: 32px;
-    background: #ffffff;
-    box-shadow: var(--shadow-md);
-}
-
-.form-section-title {
-    color: var(--text-dark);
-    font-weight: 700;
-    margin-bottom: 1.2rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-.form-section-title::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 40px;
-    height: 2px;
-    background-color: var(--accent-gold);
-    border-radius: 2px;
-}
-
-.form-label {
-    font-weight: 600;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 0.4rem;
-}
-
-.custom-input {
-    background-color: var(--sage-light);
-    border: 1px solid transparent;
-    border-radius: 12px;
-    padding: 0.8rem 1rem;
-    color: var(--text-dark);
-    transition: var(--transition-smooth);
-    box-shadow: none !important;
-}
-
-.custom-input:focus {
-    background-color: #ffffff;
-    border-color: var(--primary-sage);
-    box-shadow: 0 0 0 4px rgba(95, 116, 100, 0.1) !important;
-}
-
-.custom-input::placeholder {
-    color: #a0aba4;
-    font-size: 0.9rem;
-}
-
-textarea.custom-input {
-    resize: vertical;
-}
-
-.custom-checkbox .form-check-input {
-    background-color: var(--sage-light);
-    border: 1px solid #d1d8d3;
-    width: 1.2rem;
-    height: 1.2rem;
+/* Geri ok butonu başlangıç durumu (Küçük ve dönmüş) */
+.close-therapy-btn {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.5) rotate(-90deg);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 10;
     cursor: pointer;
 }
 
-.custom-checkbox .form-check-input:checked {
-    background-color: var(--primary-sage);
-    border-color: var(--primary-sage);
-}
+/* --- AÇILMA (EXPAND) DURUMU --- */
 
-.custom-checkbox .form-check-input:focus {
-    box-shadow: 0 0 0 4px rgba(95, 116, 100, 0.1) !important;
-}
-
-.therapy-list {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.therapy-list li {
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 8px;
-}
-
-.therapy-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--primary-sage);
-}
-
-
-/* --- BÜYÜYEN KART TASARIMI (Progressive Disclosure) --- */
-
-.therapy-card-wrapper {
-    flex: 1 1 0%;
-    min-width: 0;
-    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, transform 0.4s ease;
-}
-
-.therapy-detail {
-    display: none;
-    opacity: 0;
-    width: 0;
-    overflow: hidden;
-    border-left: 1px solid rgba(95, 116, 100, 0.2);
-}
-
-@media (max-width: 991px) {
-    .therapy-detail {
-        border-left: none;
-        border-top: 1px solid rgba(95, 116, 100, 0.2);
-    }
-}
-
-.close-therapy-btn {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 10;
-}
-
+/* Tıklanmayan diğer kartı yumuşakça sıfırla */
 #therapy-cards-container.has-expanded .therapy-card-wrapper:not(.is-expanded) {
     flex: 0 0 0%;
+    max-width: 0%;
     opacity: 0;
-    margin: 0 !important; 
+    margin: 0 !important;
     padding: 0 !important;
-    overflow: hidden;
-    pointer-events: none;
-    transform: scale(0.95);
+    border: none;
 }
 
+/* Tıklanan kart tüm alanı kaplar */
 .therapy-card-wrapper.is-expanded {
     flex: 1 1 100%;
+    max-width: 100%;
 }
 
 .therapy-card-wrapper.is-expanded .therapy-summary {
-    flex: 0 0 45%; 
+    flex: 0 0 50%; 
+    max-width: 50%;
+    padding-right: 2rem !important;
 }
 
+/* Detay alanı %50'ye genişler ve görünür olur */
 .therapy-card-wrapper.is-expanded .therapy-detail {
-    display: block;
-    width: auto;
-    flex: 1; 
-    animation: slideFadeIn 0.5s forwards;
-    animation-delay: 0.2s;
-}
-
-.therapy-card-wrapper.is-expanded .expand-btn {
-    display: none;
-}
-
-.therapy-card-wrapper.is-expanded .close-therapy-btn {
-    display: block;
+    flex: 0 0 50%;
+    max-width: 50%;
     opacity: 1;
+    visibility: visible;
+    border-left: 1px solid rgba(95, 116, 100, 0.2);
+    padding-left: 3rem !important;
 }
 
-@keyframes slideFadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+/* İçerik metni gecikmeli olarak kayarak yerine oturur */
+.therapy-card-wrapper.is-expanded .therapy-detail-inner {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.2s; 
 }
 
+/* Detaylı Bilgi Butonunu gizle */
+.therapy-card-wrapper.is-expanded .expand-btn {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: all 0.3s ease;
+}
+
+/* Geri ok butonu dönerek büyüyüp görünür olur */
+.therapy-card-wrapper.is-expanded .close-therapy-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) rotate(0deg);
+    transition-delay: 0.3s;
+}
+
+.close-therapy-btn:hover {
+    color: var(--primary-sage) !important;
+    transform: scale(1.1) rotate(0deg) !important;
+}
+
+/* --- MOBİL TASARIM (DİKEY AÇILMA) --- */
 @media (max-width: 991px) {
-    .therapy-card-wrapper.is-expanded .therapy-summary {
-        flex: auto;
+    .therapy-card-wrapper { flex: 1 1 100%; max-width: 100%; }
+    .therapy-detail-inner { transform: translateY(20px); min-width: 100%; }
+    
+    .therapy-card-wrapper.is-expanded .therapy-summary { 
+        flex: 1 1 100%; 
+        max-width: 100%;
+        padding-right: 0 !important;
+        border-bottom: 1px solid rgba(95, 116, 100, 0.2);
+        padding-bottom: 1.5rem;
     }
-    @keyframes slideFadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .therapy-card-wrapper.is-expanded .therapy-detail {
+        flex: 1 1 100%;
+        max-width: 100%;
+        border-left: none;
+        padding-left: 0 !important;
+        padding-top: 1.5rem !important;
+    }
+    .therapy-card-wrapper.is-expanded .therapy-detail-inner {
+        transform: translateY(0);
     }
 }
