@@ -1,0 +1,265 @@
+:root {
+    --primary-sage: #5f7464;
+    --sage-dark: #4a5b4e;
+    --sage-light: #f2f5f3;
+    --accent-gold: #d9b48f;
+    --bg-linen: #faf9f6;
+    --text-dark: #232b25;
+    --text-muted: #5a665e;
+    --shadow-sm: 0 4px 20px rgba(95, 116, 100, 0.04);
+    --shadow-md: 0 12px 35px rgba(95, 116, 100, 0.08);
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-linen);
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.modern-navbar {
+    top: 25px; 
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto; 
+    background-color: rgba(250, 249, 246, 0.75) !important; 
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 50rem; 
+    box-shadow: 0 10px 40px rgba(95, 116, 100, 0.08); 
+    border: 1px solid rgba(255, 255, 255, 0.6); 
+    padding: 0.6rem 1rem;
+    transition: var(--transition-smooth);
+}
+.modern-navbar.scrolled {
+    top: 10px;
+    padding: 0.4rem 1rem;
+    background-color: rgba(250, 249, 246, 0.90) !important;
+    box-shadow: 0 5px 20px rgba(95, 116, 100, 0.12);
+}
+.navbar-brand { color: var(--text-dark) !important; letter-spacing: -0.02em; font-size: 1.3rem; }
+.nav-link { color: var(--text-muted) !important; font-weight: 500; font-size: 1rem; transition: var(--transition-smooth); position: relative; padding-bottom: 5px; }
+.nav-link:hover { color: var(--primary-sage) !important; }
+.nav-link::after { content: ''; position: absolute; width: 5px; height: 5px; border-radius: 50%; bottom: -2px; left: 50%; background-color: var(--accent-gold); transition: var(--transition-smooth); transform: translateX(-50%) scale(0); opacity: 0; }
+.nav-link:hover::after { transform: translateX(-50%) scale(1); opacity: 1; }
+
+@media (max-width: 991px) {
+    .modern-navbar { border-radius: 24px; top: 15px; width: 95%; padding: 1rem; }
+    .navbar-collapse { padding-top: 1rem; text-align: center; }
+    .nav-link::after { display: none; }
+    .modern-navbar .d-flex { justify-content: center; width: 100%; }
+    .modern-navbar .btn-primary { width: 100%; margin-top: 0.5rem; }
+}
+
+/* GENEL BÖLÜMLER VE KARTLAR */
+.hero-section { background: linear-gradient(180deg, var(--sage-light) 0%, var(--bg-linen) 100%); padding: 160px 0 100px 0; }
+.hero-section h1 { color: var(--text-dark); letter-spacing: -0.03em; line-height: 1.2; }
+
+/* HERO IMAGE */
+.hero-image { 
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 32px; 
+    box-shadow: var(--shadow-md); 
+    border: 8px solid #ffffff; 
+    transition: var(--transition-smooth); 
+    display: block;
+    margin: 0 auto;
+}
+.hero-image:hover { transform: scale(1.02) rotate(1deg); }
+
+#services { background-color: var(--bg-linen); }
+#about { background-color: var(--sage-light) !important; }
+
+.card { border: none; border-radius: 24px; background: #ffffff; box-shadow: var(--shadow-sm); transition: var(--transition-smooth); border: 1px solid rgba(95, 116, 100, 0.03); }
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: rgba(95, 116, 100, 0.15); }
+.card-title { color: var(--text-dark); position: relative; display: inline-block; }
+
+.about-section { border: none; border-radius: 32px; background: #ffffff !important; box-shadow: var(--shadow-sm); text-align: center; }
+.about-title { color: var(--text-dark); position: relative; margin-bottom: 2rem; font-weight: 700; }
+.about-title::after { content: ''; display: block; width: 50px; height: 3px; background-color: var(--accent-gold); margin: 15px auto 0 auto; border-radius: 2px; }
+.about-text { color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; }
+
+/* BUTONLAR */
+.btn-primary { background-color: var(--primary-sage) !important; border: none !important; color: #ffffff !important; font-weight: 500; box-shadow: 0 4px 15px rgba(95, 116, 100, 0.2); transition: var(--transition-smooth); }
+.btn-primary:hover { background-color: var(--sage-dark) !important; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(95, 116, 100, 0.3); }
+.btn-outline-primary { color: var(--primary-sage) !important; border: 2px solid var(--primary-sage) !important; font-weight: 500; background-color: transparent; transition: var(--transition-smooth); }
+.btn-outline-primary:hover { background-color: var(--primary-sage) !important; color: #ffffff !important; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(95, 116, 100, 0.2); }
+.about-btn { background-color: var(--bg-linen) !important; color: var(--primary-sage) !important; border: 1px solid rgba(95, 116, 100, 0.2) !important; padding: 0.75rem 2.5rem; border-radius: 50rem; font-weight: 600; transition: var(--transition-smooth); display: inline-block; text-align: center; }
+.about-btn:hover { background-color: var(--primary-sage) !important; color: #ffffff !important; border-color: var(--primary-sage) !important; transform: translateY(-2px); }
+.hover-lift { transition: var(--transition-smooth); }
+.hover-lift:hover { transform: translateY(-3px); }
+
+/* FOOTER VE LİSTELER */
+footer { background-color: #1c231f !important; border-top: 1px solid rgba(250, 249, 246, 0.05); }
+footer h5 { color: var(--accent-gold); font-weight: 600; font-size: 1.1rem; }
+footer p { color: rgba(250, 249, 246, 0.6) !important; }
+footer hr { border-color: rgba(250, 249, 246, 0.1) !important; }
+.tracking-wider { letter-spacing: 0.05em; }
+
+.therapy-list { list-style-type: none; padding-left: 0; }
+.therapy-list li { position: relative; padding-left: 20px; margin-bottom: 8px; }
+.therapy-list li::before { content: "•"; position: absolute; left: 0; color: var(--primary-sage); }
+
+
+/* ========================================================= */
+/* --- BÜYÜYEN KART ANİMASYONLARI VE HATA DÜZELTMELERİ --- */
+/* ========================================================= */
+
+/* YENİ DÜZELTME: Kartların içindeki h-100 (yükseklik %100) zorlamasını kaldırıyoruz ki içerik kadar yer kaplasınlar */
+.therapy-card-wrapper .card,
+.therapy-card-wrapper .card > .d-flex,
+.therapy-card-wrapper .therapy-summary {
+    height: auto !important;
+    min-height: auto !important;
+}
+
+.therapy-card-wrapper {
+    flex: 1 1 50%; 
+    max-width: 50%;
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: hidden;
+}
+
+.therapy-summary {
+    transition: all 0.5s ease;
+}
+
+/* YENİ DÜZELTME: Gizli detayın yükseklik ve boşluklarını Bootstrap'i ezecek şekilde (!important ile) SIFIRLIYORUZ */
+.therapy-detail {
+    flex: 0 0 0% !important;
+    max-width: 0% !important;
+    max-height: 0 !important;
+    height: 0 !important;
+    padding: 0 !important; 
+    margin: 0 !important; 
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden !important;
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    border-left: 1px solid rgba(95, 116, 100, 0);
+}
+
+.therapy-detail-inner {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+    min-width: 250px; 
+}
+
+.close-therapy-btn {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.5) rotate(-90deg);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* --- AÇILMA (EXPAND) DURUMU --- */
+
+/* Kapanan kartı tamamen yokediyoruz */
+#therapy-cards-container.has-expanded .therapy-card-wrapper:not(.is-expanded) {
+    flex: 0 0 0% !important;
+    max-width: 0% !important;
+    max-height: 0 !important;
+    opacity: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none;
+    height: 0 !important; 
+    overflow: hidden !important; 
+}
+
+/* Tıklanan (Aktif) Kartın Genişlemesi */
+.therapy-card-wrapper.is-expanded {
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+
+.therapy-card-wrapper.is-expanded .therapy-summary {
+    flex: 0 0 50%; 
+    max-width: 50%;
+    padding-right: 2rem !important;
+}
+
+/* Kart açıldığında detay kısmına boşlukları ve yüksekliği Geri Veriyoruz */
+.therapy-card-wrapper.is-expanded .therapy-detail {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    max-height: 2000px !important; 
+    height: auto !important; 
+    opacity: 1;
+    visibility: visible;
+    border-left: 1px solid rgba(95, 116, 100, 0.2);
+    padding-left: 3rem !important;
+}
+
+.therapy-card-wrapper.is-expanded .therapy-detail-inner {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.2s; 
+}
+
+/* Buton gizleniyor */
+.therapy-card-wrapper.is-expanded .expand-btn {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: all 0.3s ease;
+    display: none !important; 
+}
+
+.therapy-card-wrapper.is-expanded .close-therapy-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) rotate(0deg);
+    transition-delay: 0.3s;
+}
+
+.close-therapy-btn:hover {
+    color: var(--primary-sage) !important;
+    transform: scale(1.1) rotate(0deg) !important;
+}
+
+#therapy-cards-container.has-expanded {
+    align-items: flex-start !important;
+}
+
+/* --- MOBİL TASARIM (DİKEY AÇILMA) --- */
+@media (max-width: 991px) {
+    .therapy-card-wrapper { flex: 1 1 100%; max-width: 100%; }
+    .therapy-detail-inner { transform: translateY(20px); min-width: 100%; }
+    
+    .therapy-card-wrapper.is-expanded .therapy-summary { 
+        flex: 1 1 100%; 
+        max-width: 100%;
+        padding-right: 0 !important;
+        border-bottom: 1px solid rgba(95, 116, 100, 0.2);
+        padding-bottom: 1.5rem;
+    }
+    .therapy-card-wrapper.is-expanded .therapy-detail {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+        max-height: 2000px !important;
+        height: auto !important;
+        border-left: none !important;
+        padding-left: 0 !important;
+        padding-top: 1.5rem !important; /* Mobilde açılınca Bootstrap üst boşluğu geri gelsin */
+        margin-top: 1.5rem !important;
+    }
+    .therapy-card-wrapper.is-expanded .therapy-detail-inner {
+        transform: translateY(0);
+    }
+}

@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f+@x+9qn60ytm-y-#0-1wz6#%@6_m6pcd*+pv6ld*wg+jq=6)m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['167.71.45.103', 'pskelifnihanalkan.site', 'www.pskelifnihanalkan.site', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -118,7 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = '/opt/psySite/staticfiles/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
