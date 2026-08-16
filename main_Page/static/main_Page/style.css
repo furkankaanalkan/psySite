@@ -60,7 +60,20 @@ body {
 /* GENEL BÖLÜMLER VE KARTLAR */
 .hero-section { background: linear-gradient(180deg, var(--sage-light) 0%, var(--bg-linen) 100%); padding: 160px 0 100px 0; }
 .hero-section h1 { color: var(--text-dark); letter-spacing: -0.03em; line-height: 1.2; }
-.hero-image { border-radius: 32px; box-shadow: var(--shadow-md); border: 8px solid #ffffff; transition: var(--transition-smooth); }
+
+/* HERO IMAGE */
+.hero-image { 
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 32px; 
+    box-shadow: var(--shadow-md); 
+    border: 8px solid #ffffff; 
+    transition: var(--transition-smooth); 
+    display: block;
+    margin: 0 auto;
+}
 .hero-image:hover { transform: scale(1.02) rotate(1deg); }
 
 #services { background-color: var(--bg-linen); }
@@ -98,8 +111,16 @@ footer hr { border-color: rgba(250, 249, 246, 0.1) !important; }
 
 
 /* ========================================================= */
-/* --- BÜYÜYEN KART ANİMASYONLARI (PÜRÜZSÜZ GEÇİŞ VERSİYONU) --- */
+/* --- BÜYÜYEN KART ANİMASYONLARI VE HATA DÜZELTMELERİ --- */
 /* ========================================================= */
+
+/* YENİ DÜZELTME: Kartların içindeki h-100 (yükseklik %100) zorlamasını kaldırıyoruz ki içerik kadar yer kaplasınlar */
+.therapy-card-wrapper .card,
+.therapy-card-wrapper .card > .d-flex,
+.therapy-card-wrapper .therapy-summary {
+    height: auto !important;
+    min-height: auto !important;
+}
 
 .therapy-card-wrapper {
     flex: 1 1 50%; 
@@ -112,19 +133,21 @@ footer hr { border-color: rgba(250, 249, 246, 0.1) !important; }
     transition: all 0.5s ease;
 }
 
-/* Detay alanı başlangıçta 0 genişlikte ve gizlidir */
+/* YENİ DÜZELTME: Gizli detayın yükseklik ve boşluklarını Bootstrap'i ezecek şekilde (!important ile) SIFIRLIYORUZ */
 .therapy-detail {
-    flex: 0 0 0%;
-    max-width: 0%;
+    flex: 0 0 0% !important;
+    max-width: 0% !important;
+    max-height: 0 !important;
+    height: 0 !important;
+    padding: 0 !important; 
+    margin: 0 !important; 
     opacity: 0;
     visibility: hidden;
-    overflow: hidden;
+    overflow: hidden !important;
     transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
     border-left: 1px solid rgba(95, 116, 100, 0);
-    padding-left: 0;
 }
 
-/* İçerik metinlerinin sağdan kayarak gelmesi için başlangıç durumu */
 .therapy-detail-inner {
     opacity: 0;
     transform: translateX(30px);
@@ -133,7 +156,6 @@ footer hr { border-color: rgba(250, 249, 246, 0.1) !important; }
     min-width: 250px; 
 }
 
-/* Geri ok butonu başlangıç durumu (Küçük ve dönmüş) */
 .close-therapy-btn {
     opacity: 0;
     visibility: hidden;
@@ -145,17 +167,20 @@ footer hr { border-color: rgba(250, 249, 246, 0.1) !important; }
 
 /* --- AÇILMA (EXPAND) DURUMU --- */
 
-/* Tıklanmayan diğer kartı yumuşakça sıfırla */
+/* Kapanan kartı tamamen yokediyoruz */
 #therapy-cards-container.has-expanded .therapy-card-wrapper:not(.is-expanded) {
-    flex: 0 0 0%;
-    max-width: 0%;
+    flex: 0 0 0% !important;
+    max-width: 0% !important;
+    max-height: 0 !important;
     opacity: 0;
     margin: 0 !important;
     padding: 0 !important;
     border: none;
+    height: 0 !important; 
+    overflow: hidden !important; 
 }
 
-/* Tıklanan kart tüm alanı kaplar */
+/* Tıklanan (Aktif) Kartın Genişlemesi */
 .therapy-card-wrapper.is-expanded {
     flex: 1 1 100%;
     max-width: 100%;
@@ -167,24 +192,25 @@ footer hr { border-color: rgba(250, 249, 246, 0.1) !important; }
     padding-right: 2rem !important;
 }
 
-/* Detay alanı %50'ye genişler ve görünür olur */
+/* Kart açıldığında detay kısmına boşlukları ve yüksekliği Geri Veriyoruz */
 .therapy-card-wrapper.is-expanded .therapy-detail {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    max-height: 2000px !important; 
+    height: auto !important; 
     opacity: 1;
     visibility: visible;
     border-left: 1px solid rgba(95, 116, 100, 0.2);
     padding-left: 3rem !important;
 }
 
-/* İçerik metni gecikmeli olarak kayarak yerine oturur */
 .therapy-card-wrapper.is-expanded .therapy-detail-inner {
     opacity: 1;
     transform: translateX(0);
     transition-delay: 0.2s; 
 }
 
-/* Detaylı Bilgi Butonunu gizle */
+/* Buton gizleniyor */
 .therapy-card-wrapper.is-expanded .expand-btn {
     opacity: 0;
     visibility: hidden;
@@ -192,9 +218,9 @@ footer hr { border-color: rgba(250, 249, 246, 0.1) !important; }
     padding: 0 !important;
     margin: 0 !important;
     transition: all 0.3s ease;
+    display: none !important; 
 }
 
-/* Geri ok butonu dönerek büyüyüp görünür olur */
 .therapy-card-wrapper.is-expanded .close-therapy-btn {
     opacity: 1;
     visibility: visible;
@@ -205,6 +231,10 @@ footer hr { border-color: rgba(250, 249, 246, 0.1) !important; }
 .close-therapy-btn:hover {
     color: var(--primary-sage) !important;
     transform: scale(1.1) rotate(0deg) !important;
+}
+
+#therapy-cards-container.has-expanded {
+    align-items: flex-start !important;
 }
 
 /* --- MOBİL TASARIM (DİKEY AÇILMA) --- */
@@ -220,11 +250,14 @@ footer hr { border-color: rgba(250, 249, 246, 0.1) !important; }
         padding-bottom: 1.5rem;
     }
     .therapy-card-wrapper.is-expanded .therapy-detail {
-        flex: 1 1 100%;
-        max-width: 100%;
-        border-left: none;
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+        max-height: 2000px !important;
+        height: auto !important;
+        border-left: none !important;
         padding-left: 0 !important;
-        padding-top: 1.5rem !important;
+        padding-top: 1.5rem !important; /* Mobilde açılınca Bootstrap üst boşluğu geri gelsin */
+        margin-top: 1.5rem !important;
     }
     .therapy-card-wrapper.is-expanded .therapy-detail-inner {
         transform: translateY(0);

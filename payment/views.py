@@ -30,7 +30,7 @@ def pay_view(request):
                 subject,
                 message,
                 settings.DEFAULT_FROM_EMAIL,
-                ['furkankaanforpo@gmail.com'], # Form doldurulunca mailin kime gideceği
+                ['elifnihan.psk@gmail.com'], # Form doldurulunca mailin kime gideceği
                 fail_silently=False,
             )
             messages.success(request, 'Randevu talebiniz başarıyla alındı! Size en kısa sürede dönüş yapacağız.')

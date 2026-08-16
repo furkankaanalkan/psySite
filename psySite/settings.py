@@ -125,6 +125,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = 'furkankaanforpo@gmail.com'
-EMAIL_HOST_PASSWORD = 'pmlz fido pcot ctdp'
+EMAIL_HOST_USER = 'elifnihan.psk@gmail.com'
+EMAIL_HOST_PASSWORD = 'endp qrwn dlrt ndon'  # Gmail uygulama şifresi
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
